@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nebiela Ambulance — Ethiopia's trusted emergency ambulance service. Serving Addis Ababa, Debrezeit, Jimma, Nazret, Jijiga, and Debremarkos. Call us 24/7.">
+  <meta name="keywords" content="ambulance Ethiopia, emergency ambulance Addis Ababa, Nebiela ambulance, አምቡላንስ አዲስ አበባ, emergency medical service Ethiopia">
+  <meta property="og:title" content="Nebiela Ambulance — Ethiopia Emergency Services">
+  <meta property="og:description" content="Fast, reliable emergency ambulance services across Ethiopia. Available 24/7.">
+  <meta property="og:type" content="website">
+  <title>Nebiela Ambulance | Emergency Medical Services Ethiopia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --yellow: #F5C518;
+      --yellow-dark: #C49D0A;
+      --yellow-light: #FEF9E7;
+      --green: #1E7D34;
+      --green-light: #E9F7EE;
+      --red: #C0392B;
+      --red-light: #FCEBEB;
+      --text: #1a1a1a;
+      --text-muted: #555;
+      --bg: #ffffff;
+      --bg-alt: #f8f8f6;
+      --border: #e5e5e3;
+      --radius: 12px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', 'Noto Sans Ethiopic', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ─── STICKY HEADER ─── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--yellow);
+      border-bottom: 2.5px solid var(--yellow-dark);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-box {
+      width: 38px;
+      height: 38px;
+      background: var(--green);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 12px;
+      color: white;
+      letter-spacing: 0.5px;
+    }
+    .logo-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .emergency-pill {
+      background: var(--red);
+      color: white;
+      padding: 7px 16px;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1.5px solid var(--text);
+      color: var(--text);
+      padding: 5px 14px;
+      border-radius: 24px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .lang-btn:hover { background: rgba(0,0,0,0.08); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 4px solid var(--green);
+      padding: 80px 24px 70px;
+      text-align: center;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Background crossfade slides */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.6s ease-in-out;
+      z-index: 0;
+    }
+    .hero-bg.active { opacity: 1; }
+    /* Placeholder colors — replace background-color with background-image: url('your-photo.jpg') */
+    .hero-bg-1 { background-color: #1B4332; background-image: url('photo1.jpg'); }
+    .hero-bg-2 { background-color: #641a13; background-image: url('photo2.jpg'); }
+    .hero-bg-3 { background-color: #0d1f33; background-image: url('photo3.jpg'); }
+    .hero-bg-4 { background-color: #2d2d14; background-image: url('photo4.jpg'); }
+    /* Dark overlay so text stays readable over any photo */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 8, 0, 0.55);
+      z-index: 1;
+    }
+    /* All text content floats above overlay */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 16px;
+      border-radius: 24px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: 700;
+      color: white;
+      margin-bottom: 12px;
+      line-height: 1.2;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.35);
+    }
+    .hero p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.85);
+      max-width: 480px;
+      margin: 0 auto 36px;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    }
+    .emergency-btn {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-size: 22px;
+      font-weight: 700;
+      padding: 18px 42px;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-bottom: 14px;
+    }
+    .emergency-btn:hover { background: #a93226; }
+    .emergency-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      margin-top: 8px;
+    }
+    /* Dot indicators */
+    .hero-dots {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 3;
+    }
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .hero-dot.active {
+      background: var(--yellow);
+      transform: scale(1.3);
+    }
+    /* Subtle photo caption bottom right */
+    .hero-caption {
+      position: absolute;
+      bottom: 18px;
+      right: 22px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      z-index: 3;
+    }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 56px 24px; max-width: 900px; margin: 0 auto; }
+    .section-alt { background: var(--bg-alt); }
+    .section-alt .section { max-width: 100%; padding: 56px calc((100% - 900px) / 2 + 24px); }
+    @media (max-width: 900px) {
+      .section-alt .section { padding: 56px 24px; }
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .divider {
+      width: 40px;
+      height: 4px;
+      background: var(--yellow);
+      border: 1px solid var(--yellow-dark);
+      border-radius: 2px;
+      margin-bottom: 28px;
+    }
+
+    /* ─── ABOUT ─── */
+    .about-text {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 28px;
+      max-width: 680px;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+    }
+    .about-card {
+      background: white;
+      border: 0.5px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .about-card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #888;
+      margin-bottom: 6px;
+    }
+    .about-card-val {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* ─── SERVICES ─── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+    }
+    .service-card {
+      background: white;
+      border: 0.5px solid var(--border);
+      border-top: 3px solid var(--yellow);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+    }
+    .service-icon {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .service-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+    .service-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ─── MAP ─── */
+    .map-wrapper {
+      background: var(--green-light);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .map-placeholder-text {
+      text-align: center;
+      color: var(--green);
+      font-size: 14px;
+    }
+    .map-placeholder-text span {
+      display: block;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    .city-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .city-pill {
+      background: var(--green-light);
+      color: var(--green);
+      border: 1px solid var(--green);
+      font-size: 13px;
+      padding: 5px 12px;
+      border-radius: 24px;
+      font-weight: 500;
+    }
+    .map-note {
+      font-size: 12px;
+      color: #888;
+      margin-top: 10px;
+    }
+
+    /* ─── PARTNERS ─── */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 14px;
+    }
+    .partner-card {
+      background: white;
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .partner-logo {
+      width: 56px;
+      height: 56px;
+      background: var(--yellow-light);
+      border: 1px solid var(--yellow-dark);
+      border-radius: 10px;
+      margin: 0 auto 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #888;
+    }
+    .partner-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .partner-type {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    /* ─── ANNOUNCEMENTS ─── */
+    .announce-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .announce-card {
+      background: white;
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .announce-img {
+      height: 100px;
+      background: #f0f0ee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #aaa;
+    }
+    .announce-body { padding: 14px; }
+    .announce-date {
+      font-size: 11px;
+      color: var(--green);
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    .announce-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+    .announce-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ─── FORM ─── */
+    .form-card {
+      background: white;
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      max-width: 600px;
+    }
+    .form-row { margin-bottom: 16px; }
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .form-input {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #fafafa;
+      color: var(--text);
+      transition: border-color 0.2s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--green);
+      background: white;
+    }
+    .form-textarea {
+      height: 100px;
+      resize: vertical;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      margin-top: 4px;
+      transition: background 0.2s;
+    }
+    .submit-btn:hover { background: #176129; }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: #111;
+      color: white;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .footer-emergency {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-bottom: 10px;
+    }
+    .footer-bar {
+      width: 40px;
+      height: 3px;
+      background: var(--green);
+      margin: 14px auto;
+      border-radius: 2px;
+    }
+    .footer-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+    }
+
+    /* ─── LANGUAGE SWITCHER ─── */
+    .am { display: none; }
+    .lang-am .en { display: none; }
+    .lang-am .am { display: block; }
+    .lang-am .am-i { display: inline; }
+    .lang-am .en-i { display: none; }
+    .am-i { display: none; }
+    .en-i { display: inline; }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 600px) {
+      .header { padding: 10px 16px; }
+      .logo-name { font-size: 13px; }
+      .emergency-pill { font-size: 12px; padding: 6px 12px; }
+      .hero { padding: 50px 16px 44px; }
+      .emergency-btn { font-size: 18px; padding: 14px 28px; }
+      .section { padding: 40px 16px; }
+    }
+  </style>
+</head>
+
+<body id="site">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header">
+    <div class="header-logo">
+      <div class="logo-box">NA</div>
+      <span class="logo-name">
+        <span class="en-i">Nebiela Ambulance</span>
+        <span class="am-i">ነቢላ አምቡላንስ</span>
+      </span>
+    </div>
+    <div class="header-right">
+      <a href="tel:+251XXXXXXXXX" class="emergency-pill">📞 +251 XXX XXX XXX</a>
+      <button class="lang-btn" onclick="toggleLang()">
+        <span class="en-i">አማርኛ</span>
+        <span class="am-i">English</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+
+    <!-- BACKGROUND CROSSFADE IMAGES -->
+    <!-- To use real photos: replace background-image url with your actual filenames -->
+    <!-- Upload your photos to GitHub in the same folder as index.html -->
+    <!-- Example: background-image: url('ambulance-response.jpg') -->
+    <div class="hero-bg hero-bg-1 active" id="hbg0"></div>
+    <div class="hero-bg hero-bg-2" id="hbg1"></div>
+    <div class="hero-bg hero-bg-3" id="hbg2"></div>
+    <div class="hero-bg hero-bg-4" id="hbg3"></div>
+
+    <!-- Dark overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Static foreground content -->
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="en-i">Ethiopia's Trusted Emergency Service</span>
+        <span class="am-i">የኢትዮጵያ አምቡላንስ አገልግሎት</span>
+      </div>
+      <h1>
+        <span class="en-i">Fast. Reliable.<br>Emergency Care.</span>
+        <span class="am-i">ፈጣን። አስተማማኝ።<br>የአደጋ ጊዜ እንክብካቤ።</span>
+      </h1>
+      <p>
+        <span class="en-i">Professional ambulance services across Addis Ababa and beyond. One call away, 24 hours a day.</span>
+        <span class="am-i">በአዲስ አበባ እና ዙሪያ ሙያዊ አምቡላንስ አገልግሎት። 24 ሰዓት አንድ ጥሪ ይበቃል።</span>
+      </p>
+      <a href="tel:+251XXXXXXXXX" class="emergency-btn">📞 +251 XXX XXX XXX</a>
+      <div class="emergency-label">
+        <span class="en-i">Tap to call — available 24/7</span>
+        <span class="am-i">ለመደወል ይጫኑ — 24/7 ይገኛል</span>
+      </div>
+    </div>
+
+    <!-- Dot indicators -->
+    <div class="hero-dots" id="hero-dots"></div>
+
+    <!-- Photo caption -->
+    <div class="hero-caption" id="hero-caption">Rapid response — Addis Ababa</div>
+
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <div>
+    <div class="section">
+      <h2 class="section-title">
+        <span class="en">About Nebiela</span>
+        <span class="am">ስለ ነቢላ</span>
+      </h2>
+      <div class="divider"></div>
+      <p class="about-text">
+        <span class="en">Nebiela Ambulance is Ethiopia's leading emergency medical transport service, dedicated to saving lives across Addis Ababa and surrounding regions. With trained paramedics, modern equipment, and strategic partnerships, we respond faster when it matters most.</span>
+        <span class="am">ነቢላ አምቡላንስ በኢትዮጵያ ቀዳሚ የድንገተኛ ህክምና ትራንስፖርት አገልግሎት ነው። በአዲስ አበባ እና አካባቢው ህይወት ለማትረፍ ቁርጠኛ ነን። ከሰለጠኑ ፓራሜዲኮች እና ዘመናዊ መሳሪያዎች ጋር፣ ሲያስፈልግ ፈጥነን ምላሽ እንሰጣለን።</span>
+      </p>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-card-label">Founded</div>
+          <div class="about-card-val">Year placeholder</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Coverage</div>
+          <div class="about-card-val">Addis Ababa + regions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SERVICES ═══ -->
+  <div class="section-alt">
+    <div class="section">
+      <h2 class="section-title">
+        <span class="en">Our Services</span>
+        <span class="am">አገልግሎቶቻችን</span>
+      </h2>
+      <div class="divider"></div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚑</div>
+          <div class="service-name"><span class="en-i">Emergency Response</span><span class="am-i">ድንገተኛ ምላሽ</span></div>
+          <div class="service-desc"><span class="en-i">24/7 rapid emergency dispatch across all coverage areas.</span><span class="am-i">24/7 ፈጣን ድንገተኛ አገልግሎት።</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏥</div>
+          <div class="service-name"><span class="en-i">Medical Transport</span><span class="am-i">የህክምና ትራንስፖርት</span></div>
+          <div class="service-desc"><span class="en-i">Safe and professional hospital-to-hospital patient transfer.</span><span class="am-i">ከሆስፒታል ወደ ሆስፒታል ሙያዊ ዝውውር።</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏨</div>
+          <div class="service-name"><span class="en-i">Hospital Standby</span><span class="am-i">የሆስፒታል ዝግጁነት</span></div>
+          <div class="service-desc"><span class="en-i">On-site ambulance and paramedic standby for hospitals.</span><span class="am-i">ለሆስፒታሎች በቦታው ዝግጁ ድጋፍ።</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛣️</div>
+          <div class="service-name"><span class="en-i">Inter-city Transport</span><span class="am-i">የከተሞች ትራንስፖርት</span></div>
+          <div class="service-desc"><span class="en-i">Long-distance medical transfers between cities nationwide.</span><span class="am-i">በሀገር ውስጥ ከተሞች መካከል ህክምናዊ ዝውውር።</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <div class="service-name"><span class="en-i">Corporate Coverage</span><span class="am-i">የድርጅት ሽፋን</span></div>
+          <div class="service-desc"><span class="en-i">Dedicated emergency coverage for companies and organisations.</span><span class="am-i">ለድርጅቶች ልዩ ድንገተኛ ሽፋን።</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📅</div>
+          <div class="service-name"><span class="en-i">Monthly Coverage</span><span class="am-i">ወርሃዊ ሽፋን</span></div>
+          <div class="service-desc"><span class="en-i">Flexible subscription-based medical coverage plans.</span><span class="am-i">ተለዋዋጭ የደንበኝነት ህክምና እቅዶች።</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚕️</div>
+          <div class="service-name"><span class="en-i">Paramedic Care</span><span class="am-i">ፓራሜዲክ አገልግሎት</span></div>
+          <div class="service-desc"><span class="en-i">Certified, trained medical professionals on every call.</span><span class="am-i">በእያንዳንዱ ጥሪ የሰለጠኑ ባለሙያዎች።</span></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🤝</div>
+          <div class="service-name"><span class="en-i">Event Coverage</span><span class="am-i">ዝግጅት ድጋፍ</span></div>
+          <div class="service-desc"><span class="en-i">On-site medical standby for sports and public events.</span><span class="am-i">ለስፖርት እና ህዝባዊ ዝግጅቶች ዝግጁ ድጋፍ።</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MAP ═══ -->
+  <div>
+    <div class="section">
+      <h2 class="section-title">
+        <span class="en">Coverage Map</span>
+        <span class="am">የሽፋን ካርታ</span>
+      </h2>
+      <div class="divider"></div>
+      <div class="map-wrapper">
+        <!-- REPLACE THIS BLOCK with your Google My Maps embed iframe -->
+        <div class="map-placeholder-text">
+          <span>📍</span>
+          Google My Maps will be embedded here
+        </div>
+      </div>
+      <div class="city-pills">
+        <span class="city-pill">📍 Addis Ababa</span>
+        <span class="city-pill">📍 Debrezeit</span>
+        <span class="city-pill">📍 Nazret</span>
+        <span class="city-pill">📍 Jimma</span>
+        <span class="city-pill">📍 Debremarkos</span>
+        <span class="city-pill">📍 Jijiga</span>
+      </div>
+      <p class="map-note">Interactive map with live pins coming at launch</p>
+    </div>
+  </div>
+
+  <!-- ═══ PARTNERS ═══ -->
+  <div class="section-alt">
+    <div class="section">
+      <h2 class="section-title">
+        <span class="en">Our Partners</span>
+        <span class="am">አጋሮቻችን</span>
+      </h2>
+      <div class="divider"></div>
+      <div class="partners-grid">
+        <div class="partner-card">
+          <div class="partner-logo">Logo</div>
+          <div class="partner-name">Ethiopian Airlines</div>
+          <div class="partner-type">Aviation</div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo">Logo</div>
+          <div class="partner-name">Sports Federation</div>
+          <div class="partner-type">Sports</div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo">Logo</div>
+          <div class="partner-name">Partner name</div>
+          <div class="partner-type">Category</div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo">Logo</div>
+          <div class="partner-name">Partner name</div>
+          <div class="partner-type">Category</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ANNOUNCEMENTS ═══ -->
+  <div>
+    <div class="section">
+      <h2 class="section-title">
+        <span class="en">Latest News</span>
+        <span class="am">የቅርብ ጊዜ ዜናዎች</span>
+      </h2>
+      <div class="divider"></div>
+      <div class="announce-grid">
+        <div class="announce-card">
+          <div class="announce-img">Photo or video placeholder</div>
+          <div class="announce-body">
+            <div class="announce-date">April 2026</div>
+            <div class="announce-title">Announcement title here</div>
+            <div class="announce-text">Short description of the news or partnership event goes here.</div>
+          </div>
+        </div>
+        <div class="announce-card">
+          <div class="announce-img">Photo or video placeholder</div>
+          <div class="announce-body">
+            <div class="announce-date">April 2026</div>
+            <div class="announce-title">Announcement title here</div>
+            <div class="announce-text">Short description of the news or partnership event goes here.</div>
+          </div>
+        </div>
+        <div class="announce-card">
+          <div class="announce-img">Photo or video placeholder</div>
+          <div class="announce-body">
+            <div class="announce-date">April 2026</div>
+            <div class="announce-title">Announcement title here</div>
+            <div class="announce-text">Short description of the news or partnership event goes here.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PARTNERSHIP FORM ═══ -->
+  <div class="section-alt">
+    <div class="section">
+      <h2 class="section-title">
+        <span class="en">Partner With Us</span>
+        <span class="am">ከእኛ ጋር ይተባበሩ</span>
+      </h2>
+      <div class="divider"></div>
+      <!-- REPLACE action="#" with your Formspree URL e.g. action="https://formspree.io/f/yourcode" -->
+      <form class="form-card" action="#" method="POST">
+        <div class="form-row">
+          <label class="form-label">
+            <span class="en-i">Organization name</span>
+            <span class="am-i">የድርጅት ስም</span>
+          </label>
+          <input class="form-input" type="text" name="organization" placeholder="Your organization" required>
+        </div>
+        <div class="form-row">
+          <label class="form-label">
+            <span class="en-i">Contact name</span>
+            <span class="am-i">የዕውቂያ ስም</span>
+          </label>
+          <input class="form-input" type="text" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="form-row">
+          <label class="form-label">
+            <span class="en-i">Email or phone</span>
+            <span class="am-i">ኢሜይል ወይም ስልክ</span>
+          </label>
+          <input class="form-input" type="text" name="contact" placeholder="How to reach you" required>
+        </div>
+        <div class="form-row">
+          <label class="form-label">
+            <span class="en-i">Type of partnership</span>
+            <span class="am-i">የሽርክና አይነት</span>
+          </label>
+          <input class="form-input" type="text" name="partnership_type" placeholder="e.g. Corporate, Event, Institutional">
+        </div>
+        <div class="form-row">
+          <label class="form-label">
+            <span class="en-i">Message</span>
+            <span class="am-i">መልዕክት</span>
+          </label>
+          <textarea class="form-input form-textarea" name="message" placeholder="Tell us about the partnership opportunity"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">
+          <span class="en-i">Submit partnership inquiry</span>
+          <span class="am-i">የሽርክና ጥያቄ ያስገቡ</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer-emergency">📞 +251 XXX XXX XXX</div>
+    <div class="footer-bar"></div>
+    <div class="footer-text">
+      Nebiela Ambulance · Addis Ababa, Ethiopia<br>
+      partnership@nebielaambulance.com · Available 24/7<br><br>
+      &copy; 2026 Nebiela Ambulance. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ═══ LANGUAGE SWITCHER SCRIPT ═══ -->
+  <script>
+    function toggleLang() {
+      document.getElementById('site').classList.toggle('lang-am');
+    }
+  </script>
+
+  <!-- ═══ HERO CROSSFADE SCRIPT ═══ -->
+  <script>
+    (function() {
+      var captions = [
+        'Rapid response — Addis Ababa',
+        'Trained paramedics on every call',
+        'Partnership with Ethiopian Airlines',
+        'On-site coverage for major events'
+      ];
+      var bgs = document.querySelectorAll('.hero-bg');
+      var dotsEl = document.getElementById('hero-dots');
+      var capEl = document.getElementById('hero-caption');
+      var cur = 0;
+
+      // Build dots
+      bgs.forEach(function(_, i) {
+        var d = document.createElement('button');
+        d.className = 'hero-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Photo ' + (i + 1));
+        d.onclick = function() { goTo(i); };
+        dotsEl.appendChild(d);
+      });
+
+      function goTo(n) {
+        bgs[cur].classList.remove('active');
+        dotsEl.querySelectorAll('.hero-dot')[cur].classList.remove('active');
+        cur = (n + bgs.length) % bgs.length;
+        bgs[cur].classList.add('active');
+        dotsEl.querySelectorAll('.hero-dot')[cur].classList.add('active');
+        capEl.textContent = captions[cur];
+      }
+
+      // Auto-advance every 4.5 seconds
+      setInterval(function() { goTo(cur + 1); }, 4500);
+    })();
+  </script>
+
+  <!-- ═══ GOOGLE ANALYTICS ═══ -->
+  <!-- REPLACE G-XXXXXXXXXX with your actual GA4 tracking ID -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script> -->
+
+</body>
+</html>
