@@ -352,7 +352,94 @@
       margin-top: 10px;
     }
 
+    /* ─── DESTINATIONS TABLE ─── */
+    .map-stats {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .map-stat-card {
+      background: var(--green);
+      color: white;
+      border-radius: var(--radius);
+      padding: 16px 24px;
+      text-align: center;
+      flex: 1;
+      min-width: 120px;
+    }
+    .map-stat-num {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .map-stat-label {
+      font-size: 12px;
+      opacity: 0.85;
+    }
+    .dest-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 500px) {
+      .dest-columns { grid-template-columns: 1fr; }
+    }
+    .dest-group {
+      background: white;
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .dest-group-header {
+      background: var(--yellow);
+      border-bottom: 1px solid var(--yellow-dark);
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .dest-list {
+      list-style: none;
+      padding: 8px 0;
+    }
+    .dest-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 14px;
+      font-size: 13px;
+      color: var(--text);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .dest-item:last-child { border-bottom: none; }
+    .dest-num {
+      font-size: 11px;
+      color: #aaa;
+      min-width: 18px;
+      font-weight: 500;
+    }
+    .dest-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+    .dest-dot.stationed { background: var(--red); }
+
     /* ─── PARTNERS ─── */
+    .partners-sub-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 24px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
     .partners-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -536,7 +623,7 @@
       <div class="logo-box">NA</div>
       <span class="logo-name">
         <span class="en-i">Nebiela Ambulance</span>
-        <span class="am-i">ነቢላ አምቡላንስ</span>
+        <span class="am-i">ነቤላ አምቡላንስ</span>
       </span>
     </div>
     <div class="header-right">
@@ -597,21 +684,33 @@
     <div class="section">
       <h2 class="section-title">
         <span class="en">About Nebiela</span>
-        <span class="am">ስለ ነቢላ</span>
+        <span class="am">ስለ ነቤላ</span>
       </h2>
       <div class="divider"></div>
       <p class="about-text">
         <span class="en">Nebiela Ambulance is Ethiopia's leading emergency medical transport service, dedicated to saving lives across Addis Ababa and surrounding regions. With trained paramedics, modern equipment, and strategic partnerships, we respond faster when it matters most.</span>
-        <span class="am">ነቢላ አምቡላንስ በኢትዮጵያ ቀዳሚ የድንገተኛ ህክምና ትራንስፖርት አገልግሎት ነው። በአዲስ አበባ እና አካባቢው ህይወት ለማትረፍ ቁርጠኛ ነን። ከሰለጠኑ ፓራሜዲኮች እና ዘመናዊ መሳሪያዎች ጋር፣ ሲያስፈልግ ፈጥነን ምላሽ እንሰጣለን።</span>
+        <span class="am">ነቤላ አምቡላንስ በኢትዮጵያ ቀዳሚ የድንገተኛ ህክምና ትራንስፖርት አገልግሎት ነው። በአዲስ አበባ እና አካባቢው ህይወት ለማትረፍ ቁርጠኛ ነን። ከሰለጠኑ ፓራሜዲኮች እና ዘመናዊ መሳሪያዎች ጋር፣ ሲያስፈልግ ፈጥነን ምላሽ እንሰጣለን።</span>
       </p>
       <div class="about-grid">
         <div class="about-card">
-          <div class="about-card-label">Founded</div>
-          <div class="about-card-val">Year placeholder</div>
+          <div class="about-card-label">
+            <span class="en-i">Founded</span>
+            <span class="am-i">የተቋቋመው</span>
+          </div>
+          <div class="about-card-val">
+            <span class="en-i">Year placeholder</span>
+            <span class="am-i">ዓ.ም. ቦታ</span>
+          </div>
         </div>
         <div class="about-card">
-          <div class="about-card-label">Coverage</div>
-          <div class="about-card-val">Addis Ababa + regions</div>
+          <div class="about-card-label">
+            <span class="en-i">Coverage</span>
+            <span class="am-i">ሽፋን</span>
+          </div>
+          <div class="about-card-val">
+            <span class="en-i">Addis Ababa + regions</span>
+            <span class="am-i">አዲስ አበባ + ክልሎች</span>
+          </div>
         </div>
       </div>
     </div>
@@ -678,6 +777,26 @@
         <span class="am">የሽፋን ካርታ</span>
       </h2>
       <div class="divider"></div>
+
+      <!-- Stat cards -->
+      <div class="map-stats">
+        <div class="map-stat-card">
+          <div class="map-stat-num">18</div>
+          <div class="map-stat-label">
+            <span class="en-i">Total destinations</span>
+            <span class="am-i">ጠቅላላ መድረሻዎች</span>
+          </div>
+        </div>
+        <div class="map-stat-card" style="background: var(--red);">
+          <div class="map-stat-num">3</div>
+          <div class="map-stat-label">
+            <span class="en-i">Stationed cities</span>
+            <span class="am-i">የሚቆዩባቸው ከተሞች</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Map placeholder -->
       <div class="map-wrapper">
         <!-- REPLACE THIS BLOCK with your Google My Maps embed iframe -->
         <div class="map-placeholder-text">
@@ -685,15 +804,79 @@
           Google My Maps will be embedded here
         </div>
       </div>
-      <div class="city-pills">
-        <span class="city-pill">📍 Addis Ababa</span>
-        <span class="city-pill">📍 Debrezeit</span>
-        <span class="city-pill">📍 Nazret</span>
-        <span class="city-pill">📍 Jimma</span>
-        <span class="city-pill">📍 Debremarkos</span>
-        <span class="city-pill">📍 Jijiga</span>
+
+      <!-- Destination lists -->
+      <div class="dest-columns" style="margin-top: 20px;">
+        <div class="dest-group">
+          <div class="dest-group-header">
+            <span class="en-i">🚑 All Destinations</span>
+            <span class="am-i">🚑 ሁሉም መድረሻዎች</span>
+          </div>
+          <ul class="dest-list">
+            <li class="dest-item"><span class="dest-num">1</span><span class="dest-dot"></span><span class="en-i">Dessie</span><span class="am-i">ደሴ</span></li>
+            <li class="dest-item"><span class="dest-num">2</span><span class="dest-dot"></span><span class="en-i">Kombolcha</span><span class="am-i">ኮምቦልቻ</span></li>
+            <li class="dest-item"><span class="dest-num">3</span><span class="dest-dot"></span><span class="en-i">Jijiga</span><span class="am-i">ጅጅጋ</span></li>
+            <li class="dest-item"><span class="dest-num">4</span><span class="dest-dot"></span><span class="en-i">Togo Wuchali</span><span class="am-i">ቶጎ ውጫሌ</span></li>
+            <li class="dest-item"><span class="dest-num">5</span><span class="dest-dot"></span><span class="en-i">Bahir Dar</span><span class="am-i">ባህር ዳር</span></li>
+            <li class="dest-item"><span class="dest-num">6</span><span class="dest-dot"></span><span class="en-i">Debre Berhan</span><span class="am-i">ደብረ ብርሃን</span></li>
+            <li class="dest-item"><span class="dest-num">7</span><span class="dest-dot"></span><span class="en-i">Nazret</span><span class="am-i">ናዝሬት</span></li>
+            <li class="dest-item"><span class="dest-num">8</span><span class="dest-dot"></span><span class="en-i">Welayita Sodo</span><span class="am-i">ወላይታ ሶዶ</span></li>
+            <li class="dest-item"><span class="dest-num">9</span><span class="dest-dot"></span><span class="en-i">Jimma</span><span class="am-i">ጅማ</span></li>
+          </ul>
+        </div>
+        <div class="dest-group">
+          <div class="dest-group-header">
+            <span class="en-i">🚑 All Destinations (cont.)</span>
+            <span class="am-i">🚑 ሁሉም መድረሻዎች (ቀጣይ)</span>
+          </div>
+          <ul class="dest-list">
+            <li class="dest-item"><span class="dest-num">10</span><span class="dest-dot"></span><span class="en-i">Semera</span><span class="am-i">ሰመራ</span></li>
+            <li class="dest-item"><span class="dest-num">11</span><span class="dest-dot"></span><span class="en-i">Debre Zeit</span><span class="am-i">ደብረ ዘይት</span></li>
+            <li class="dest-item"><span class="dest-num">12</span><span class="dest-dot"></span><span class="en-i">Moyale</span><span class="am-i">ሞያሌ</span></li>
+            <li class="dest-item"><span class="dest-num">13</span><span class="dest-dot"></span><span class="en-i">Welayita</span><span class="am-i">ወላይታ</span></li>
+            <li class="dest-item"><span class="dest-num">14</span><span class="dest-dot"></span><span class="en-i">Hossahena</span><span class="am-i">ሆሳዕና</span></li>
+            <li class="dest-item"><span class="dest-num">15</span><span class="dest-dot"></span><span class="en-i">Hawassa</span><span class="am-i">ሐዋሳ</span></li>
+            <li class="dest-item"><span class="dest-num">16</span><span class="dest-dot"></span><span class="en-i">Debre Markos</span><span class="am-i">ደብረ ማርቆስ</span></li>
+            <li class="dest-item"><span class="dest-num">17</span><span class="dest-dot"></span><span class="en-i">Ambo</span><span class="am-i">አምቦ</span></li>
+            <li class="dest-item"><span class="dest-num">18</span><span class="dest-dot"></span><span class="en-i">Addis Ababa</span><span class="am-i">አዲስ አበባ</span></li>
+          </ul>
+        </div>
       </div>
-      <p class="map-note">Interactive map with live pins coming at launch</p>
+
+      <!-- Stationed cities -->
+      <div class="dest-group" style="max-width: 400px;">
+        <div class="dest-group-header" style="background: var(--red-light); border-color: #e0b0b0; color: var(--red);">
+          <span class="en-i">📍 Stationed Service</span>
+          <span class="am-i">📍 የሚቆዩ አካባቢዎች</span>
+        </div>
+        <ul class="dest-list">
+          <li class="dest-item"><span class="dest-dot stationed"></span><span class="en-i">Addis Ababa</span><span class="am-i">አዲስ አበባ</span></li>
+          <li class="dest-item"><span class="dest-dot stationed"></span><span class="en-i">Hawassa</span><span class="am-i">ሐዋሳ</span></li>
+          <li class="dest-item"><span class="dest-dot stationed"></span><span class="en-i">Bishoftu (Debre Zeit)</span><span class="am-i">ቢሾፍቱ (ደብረ ዘይት)</span></li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div style="margin-top: 20px; background: var(--yellow-light); border: 1.5px solid var(--yellow-dark); border-radius: var(--radius); padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+        <div>
+          <div style="font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px;">
+            <span class="en-i">🏙️ Don't see your city here?</span>
+            <span class="am-i">🏙️ ከተማዎን አላዩም?</span>
+          </div>
+          <div style="font-size: 13px; color: var(--text-muted);">
+            <span class="en-i">Call us to check if we serve your area.</span>
+            <span class="am-i">እናገለግልዎ እንደሆን ለማወቅ ይደውሉልን።</span>
+          </div>
+        </div>
+        <a href="tel:+251XXXXXXXXX" style="background: var(--green); color: white; padding: 10px 20px; border-radius: 24px; font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap;">
+          📞 +251 XXX XXX XXX
+        </a>
+      </div>
+
+      <p class="map-note" style="margin-top: 14px;">
+        <span class="en-i">Interactive Google My Maps with live pins will be embedded at launch</span>
+        <span class="am-i">በጥሞና የሚሰራ የጎግል ካርታ በምርቃት ወቅት ይካተታል</span>
+      </p>
     </div>
   </div>
 
@@ -705,28 +888,89 @@
         <span class="am">አጋሮቻችን</span>
       </h2>
       <div class="divider"></div>
+
+      <!-- Strategic partners -->
+      <div class="partners-sub-title">
+        <span class="en-i">Strategic Partners</span>
+        <span class="am-i">ስትራቴጂካዊ አጋሮች</span>
+      </div>
       <div class="partners-grid">
         <div class="partner-card">
           <div class="partner-logo">Logo</div>
-          <div class="partner-name">Ethiopian Airlines</div>
-          <div class="partner-type">Aviation</div>
+          <div class="partner-name">
+            <span class="en-i">Ethiopian Airlines</span>
+            <span class="am-i">የኢትዮጵያ አየር መንገድ</span>
+          </div>
+          <div class="partner-type">
+            <span class="en-i">Aviation</span>
+            <span class="am-i">አቪዬሽን</span>
+          </div>
         </div>
         <div class="partner-card">
           <div class="partner-logo">Logo</div>
-          <div class="partner-name">Sports Federation</div>
-          <div class="partner-type">Sports</div>
+          <div class="partner-name">
+            <span class="en-i">Ethiopian Football Federation</span>
+            <span class="am-i">የኢትዮጵያ እግር ኳስ ፌዴሬሽን</span>
+          </div>
+          <div class="partner-type">
+            <span class="en-i">Sports Federation</span>
+            <span class="am-i">የስፖርት ፌዴሬሽን</span>
+          </div>
         </div>
         <div class="partner-card">
           <div class="partner-logo">Logo</div>
-          <div class="partner-name">Partner name</div>
-          <div class="partner-type">Category</div>
-        </div>
-        <div class="partner-card">
-          <div class="partner-logo">Logo</div>
-          <div class="partner-name">Partner name</div>
-          <div class="partner-type">Category</div>
+          <div class="partner-name">
+            <span class="en-i">Ethiopian Premier League Share Company</span>
+            <span class="am-i">የኢትዮጵያ ፕሪምየር ሊግ አክሲዮን ማህበር</span>
+          </div>
+          <div class="partner-type">
+            <span class="en-i">Football League</span>
+            <span class="am-i">እግር ኳስ ሊግ</span>
+          </div>
         </div>
       </div>
+
+      <!-- Corporate partners -->
+      <div class="partners-sub-title">
+        <span class="en-i">Corporate Partners</span>
+        <span class="am-i">የድርጅት አጋሮች</span>
+      </div>
+      <div class="partners-grid">
+        <div class="partner-card">
+          <div class="partner-logo">Logo</div>
+          <div class="partner-name">
+            <span class="en-i">Alliance Infrastructure</span>
+            <span class="am-i">አሊያንስ ኢንፍራስትራክቸር</span>
+          </div>
+          <div class="partner-type">
+            <span class="en-i">Infrastructure</span>
+            <span class="am-i">ኢንፍራስትራክቸር</span>
+          </div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo">Logo</div>
+          <div class="partner-name">
+            <span class="en-i">Liana Healthcare (Yanet Hospital)</span>
+            <span class="am-i">ሊያና ጤና አገልግሎት (ያኔት ሆስፒታል)</span>
+          </div>
+          <div class="partner-type">
+            <span class="en-i">Healthcare</span>
+            <span class="am-i">የጤና አገልግሎት</span>
+          </div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo">Logo</div>
+          <div class="partner-name">
+            <span class="en-i">Abyssinia Integrated Steel</span>
+            <span class="am-i">አቢሲኒያ ኢንቴግሬትድ ስቲል</span>
+          </div>
+          <div class="partner-type">
+            <span class="en-i">Manufacturing</span>
+            <span class="am-i">ማኑፋክቸሪንግ</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -740,27 +984,63 @@
       <div class="divider"></div>
       <div class="announce-grid">
         <div class="announce-card">
-          <div class="announce-img">Photo or video placeholder</div>
+          <div class="announce-img">
+            <span class="en-i">Photo or video placeholder</span>
+            <span class="am-i">የፎቶ ወይም ቪዲዮ ቦታ</span>
+          </div>
           <div class="announce-body">
-            <div class="announce-date">April 2026</div>
-            <div class="announce-title">Announcement title here</div>
-            <div class="announce-text">Short description of the news or partnership event goes here.</div>
+            <div class="announce-date">
+              <span class="en-i">April 2026</span>
+              <span class="am-i">ሚያዝያ 2026</span>
+            </div>
+            <div class="announce-title">
+              <span class="en-i">Announcement title here</span>
+              <span class="am-i">የማስታወቂያ ርዕስ እዚህ</span>
+            </div>
+            <div class="announce-text">
+              <span class="en-i">Short description of the news or partnership event goes here.</span>
+              <span class="am-i">የዜናው ወይም የሽርክና ዝግጅቱ አጭር መግለጫ እዚህ ይገባል።</span>
+            </div>
           </div>
         </div>
         <div class="announce-card">
-          <div class="announce-img">Photo or video placeholder</div>
+          <div class="announce-img">
+            <span class="en-i">Photo or video placeholder</span>
+            <span class="am-i">የፎቶ ወይም ቪዲዮ ቦታ</span>
+          </div>
           <div class="announce-body">
-            <div class="announce-date">April 2026</div>
-            <div class="announce-title">Announcement title here</div>
-            <div class="announce-text">Short description of the news or partnership event goes here.</div>
+            <div class="announce-date">
+              <span class="en-i">April 2026</span>
+              <span class="am-i">ሚያዝያ 2026</span>
+            </div>
+            <div class="announce-title">
+              <span class="en-i">Announcement title here</span>
+              <span class="am-i">የማስታወቂያ ርዕስ እዚህ</span>
+            </div>
+            <div class="announce-text">
+              <span class="en-i">Short description of the news or partnership event goes here.</span>
+              <span class="am-i">የዜናው ወይም የሽርክና ዝግጅቱ አጭር መግለጫ እዚህ ይገባል።</span>
+            </div>
           </div>
         </div>
         <div class="announce-card">
-          <div class="announce-img">Photo or video placeholder</div>
+          <div class="announce-img">
+            <span class="en-i">Photo or video placeholder</span>
+            <span class="am-i">የፎቶ ወይም ቪዲዮ ቦታ</span>
+          </div>
           <div class="announce-body">
-            <div class="announce-date">April 2026</div>
-            <div class="announce-title">Announcement title here</div>
-            <div class="announce-text">Short description of the news or partnership event goes here.</div>
+            <div class="announce-date">
+              <span class="en-i">April 2026</span>
+              <span class="am-i">ሚያዝያ 2026</span>
+            </div>
+            <div class="announce-title">
+              <span class="en-i">Announcement title here</span>
+              <span class="am-i">የማስታወቂያ ርዕስ እዚህ</span>
+            </div>
+            <div class="announce-text">
+              <span class="en-i">Short description of the news or partnership event goes here.</span>
+              <span class="am-i">የዜናው ወይም የሽርክና ዝግጅቱ አጭር መግለጫ እዚህ ይገባል።</span>
+            </div>
           </div>
         </div>
       </div>
@@ -782,35 +1062,40 @@
             <span class="en-i">Organization name</span>
             <span class="am-i">የድርጅት ስም</span>
           </label>
-          <input class="form-input" type="text" name="organization" placeholder="Your organization" required>
+          <input class="form-input en-i" type="text" name="organization" placeholder="Your organization">
+          <input class="form-input am-i" type="text" name="organization_am" placeholder="የድርጅትዎ ስም">
         </div>
         <div class="form-row">
           <label class="form-label">
             <span class="en-i">Contact name</span>
             <span class="am-i">የዕውቂያ ስም</span>
           </label>
-          <input class="form-input" type="text" name="name" placeholder="Your full name" required>
+          <input class="form-input en-i" type="text" name="name" placeholder="Your full name" required>
+          <input class="form-input am-i" type="text" name="name_am" placeholder="ሙሉ ስምዎ">
         </div>
         <div class="form-row">
           <label class="form-label">
             <span class="en-i">Email or phone</span>
             <span class="am-i">ኢሜይል ወይም ስልክ</span>
           </label>
-          <input class="form-input" type="text" name="contact" placeholder="How to reach you" required>
+          <input class="form-input en-i" type="text" name="contact" placeholder="How to reach you" required>
+          <input class="form-input am-i" type="text" name="contact_am" placeholder="እንዴት እናገኝዎ">
         </div>
         <div class="form-row">
           <label class="form-label">
             <span class="en-i">Type of partnership</span>
             <span class="am-i">የሽርክና አይነት</span>
           </label>
-          <input class="form-input" type="text" name="partnership_type" placeholder="e.g. Corporate, Event, Institutional">
+          <input class="form-input en-i" type="text" name="partnership_type" placeholder="e.g. Corporate, Event, Institutional">
+          <input class="form-input am-i" type="text" name="partnership_type_am" placeholder="ለምሳሌ፡ ድርጅታዊ፣ ዝግጅት፣ ተቋማዊ">
         </div>
         <div class="form-row">
           <label class="form-label">
             <span class="en-i">Message</span>
             <span class="am-i">መልዕክት</span>
           </label>
-          <textarea class="form-input form-textarea" name="message" placeholder="Tell us about the partnership opportunity"></textarea>
+          <textarea class="form-input form-textarea en-i" name="message" placeholder="Tell us about the partnership opportunity"></textarea>
+          <textarea class="form-input form-textarea am-i" name="message_am" placeholder="ስለ ሽርክናው እድል ይንገሩን"></textarea>
         </div>
         <button type="submit" class="submit-btn">
           <span class="en-i">Submit partnership inquiry</span>
@@ -825,9 +1110,12 @@
     <div class="footer-emergency">📞 +251 XXX XXX XXX</div>
     <div class="footer-bar"></div>
     <div class="footer-text">
-      Nebiela Ambulance · Addis Ababa, Ethiopia<br>
+      <span class="en-i">Nebiela Ambulance · Addis Ababa, Ethiopia<br>
       partnership@nebielaambulance.com · Available 24/7<br><br>
-      &copy; 2026 Nebiela Ambulance. All rights reserved.
+      &copy; 2026 Nebiela Ambulance. All rights reserved.</span>
+      <span class="am-i">ነቤላ አምቡላንስ · አዲስ አበባ፣ ኢትዮጵያ<br>
+      partnership@nebielaambulance.com · 24/7 ይገኛል<br><br>
+      &copy; 2026 ነቤላ አምቡላንስ። መብቱ በሕግ የተጠበቀ ነው።</span>
     </div>
   </footer>
 
