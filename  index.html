@@ -24,7 +24,7 @@
     "@type": "EmergencyService",
     "name": "Nebiela Ambulance",
     "alternateName": "ነቤላ አምቡላንስ",
-    "description": "Ethiopia's trusted pre-hospital emergency ambulance service. Selfless care across 18 cities, 24/7.",
+    "description": "Ethiopia's trusted pre-hospital emergency ambulance service. Selfless care across 18+ cities, 24/7.",
     "telephone": "6761",
     "url": "https://nebielaambulance.com",
     "address": { "@type": "PostalAddress", "addressLocality": "Addis Ababa", "addressCountry": "ET" },
@@ -52,8 +52,7 @@
     /* HEADER */
     .header { position: sticky; top: 0; z-index: 100; background: var(--yellow); border-bottom: 2.5px solid var(--yellow-dark); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
     .header-logo { display: flex; align-items: center; gap: 10px; }
-    .logo-box { width: 42px; height: 42px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 10px; color: white; text-align: center; line-height: 1.3; padding: 2px; }
-    .logo-name { font-size: 15px; font-weight: 600; color: var(--text); }
+    .logo-name { font-size: 17px; font-weight: 700; color: var(--text); }
     .header-right { display: flex; align-items: center; gap: 12px; }
     .emergency-pill { background: var(--red); color: white; padding: 7px 18px; border-radius: 24px; font-weight: 700; font-size: 15px; text-decoration: none; white-space: nowrap; }
     .lang-btn { background: transparent; border: 1.5px solid var(--text); color: var(--text); padding: 5px 14px; border-radius: 24px; font-size: 12px; font-weight: 500; cursor: pointer; font-family: inherit; }
@@ -101,10 +100,11 @@
     .service-icon { font-size: 24px; margin-bottom: 10px; }
     .service-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 5px; }
     .service-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+    .service-numbers { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+    .service-number { font-size: 12px; font-weight: 600; color: var(--green); text-decoration: none; }
 
     /* MAP */
-    .map-wrapper { background: var(--green-light); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; height: 380px; }
-    .map-wrapper iframe { width: 100%; height: 100%; border: none; }
+    .map-wrapper { border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; height: 420px; }
     .map-note { font-size: 12px; color: #888; margin-top: 10px; line-height: 1.6; }
     .map-stats { display: flex; gap: 14px; margin-bottom: 24px; flex-wrap: wrap; }
     .map-stat-card { background: var(--green); color: white; border-radius: var(--radius); padding: 16px 24px; text-align: center; flex: 1; min-width: 120px; }
@@ -130,7 +130,6 @@
     .partners-sub-title { font-size: 14px; font-weight: 600; color: var(--text); margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
     .partners-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin-bottom: 16px; }
     .partner-card { background: white; border: 0.5px solid var(--border); border-radius: var(--radius); padding: 20px 16px; text-align: center; }
-    .partner-logo { width: 64px; height: 64px; background: var(--yellow-light); border: 1px solid var(--yellow-dark); border-radius: 10px; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--green); }
     .partner-name { font-size: 13px; font-weight: 600; color: var(--text); }
     .partner-type { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
 
@@ -170,7 +169,7 @@
     /* MOBILE */
     @media (max-width: 600px) {
       .header { padding: 10px 16px; }
-      .logo-name { font-size: 13px; }
+      .logo-name { font-size: 14px; }
       .emergency-pill { font-size: 13px; padding: 6px 14px; }
       .hero { padding: 50px 16px 44px; }
       .emergency-btn { font-size: 20px; padding: 14px 32px; }
@@ -184,7 +183,7 @@
   <!-- HEADER -->
   <header class="header">
     <div class="header-logo">
-      <span class="logo-name" style="font-size: 17px; font-weight: 700;">
+      <span class="logo-name">
         <span class="en-i">Nebiela Ambulance</span>
         <span class="am-i">ነቤላ አምቡላንስ</span>
       </span>
@@ -198,7 +197,7 @@
     </div>
   </header>
 
-  <!-- HERO — SEO: H1 with primary ambulance + Ethiopia keywords -->
+  <!-- HERO -->
   <section class="hero" aria-label="Nebiela Ambulance Emergency Medical Services Ethiopia">
     <div class="hero-bg hero-bg-1 active"></div>
     <div class="hero-bg hero-bg-2"></div>
@@ -215,8 +214,8 @@
         <span class="am-i">ቅን እንክብካቤ።<br>እያንዳንዱ ሰከንድ ጠቃሚ ሲሆን።</span>
       </h1>
       <p>
-        <span class="en-i">Professional emergency ambulance services across Addis Ababa and 18 cities in Ethiopia. One call away, 24 hours a day.</span>
-        <span class="am-i">በአዲስ አበባ እና በ18 የኢትዮጵያ ከተሞች ሙያዊ ድንገተኛ አምቡላንስ አገልግሎት። 24 ሰዓት፣ አንድ ጥሪ ይበቃል።</span>
+        <span class="en-i">Professional emergency ambulance services across Addis Ababa and 18+ cities in Ethiopia. One call away, 24 hours a day.</span>
+        <span class="am-i">በአዲስ አበባ እና በ18+ የኢትዮጵያ ከተሞች ሙያዊ ድንገተኛ አምቡላንስ አገልግሎት። 24 ሰዓት፣ አንድ ጥሪ ይበቃል።</span>
       </p>
       <a href="tel:6761" class="emergency-btn">🚨 6761</a>
       <div class="emergency-label">
@@ -228,7 +227,7 @@
     <div class="hero-caption" id="hero-caption"></div>
   </section>
 
-  <!-- ABOUT — SEO: Brand story with natural keyword integration -->
+  <!-- ABOUT -->
   <div>
     <div class="section">
       <h2 class="section-title">
@@ -261,7 +260,7 @@
     </div>
   </div>
 
-  <!-- SERVICES — SEO: Each service includes ambulance/emergency/Ethiopia keywords naturally -->
+  <!-- SERVICES -->
   <div class="section-alt">
     <div class="section">
       <h2 class="section-title">
@@ -274,8 +273,8 @@
           <div class="service-icon">🚑</div>
           <div class="service-name"><span class="en-i">Emergency Response</span><span class="am-i">ድንገተኛ ምላሽ</span></div>
           <div class="service-desc"><span class="en-i">24/7 rapid ambulance dispatch in Addis Ababa and across Ethiopia.</span><span class="am-i">24/7 ፈጣን አምቡላንስ በአዲስ አበባ እና ኢትዮጵያ።</span></div>
-          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 4px;">
-            <a href="tel:6761" style="font-size: 12px; font-weight: 600; color: var(--green); text-decoration: none;">📞 6761</a>
+          <div class="service-numbers">
+            <a href="tel:6761" class="service-number">📞 6761</a>
           </div>
         </div>
         <div class="service-card">
@@ -297,18 +296,18 @@
           <div class="service-icon">🏢</div>
           <div class="service-name"><span class="en-i">Corporate Coverage</span><span class="am-i">የድርጅት ሽፋን</span></div>
           <div class="service-desc"><span class="en-i">Dedicated emergency ambulance coverage for businesses and organisations.</span><span class="am-i">ለድርጅቶች እና ተቋማት ልዩ ድንገተኛ አምቡላንስ ሽፋን።</span></div>
-          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 4px;">
-            <a href="tel:0988919191" style="font-size: 12px; font-weight: 600; color: var(--green); text-decoration: none;">📞 0988 919 191</a>
-            <a href="tel:0988929292" style="font-size: 12px; font-weight: 600; color: var(--green); text-decoration: none;">📞 0988 929 292</a>
+          <div class="service-numbers">
+            <a href="tel:0988919191" class="service-number">📞 0988 919 191</a>
+            <a href="tel:0988929292" class="service-number">📞 0988 929 292</a>
           </div>
         </div>
         <div class="service-card">
           <div class="service-icon">📅</div>
           <div class="service-name"><span class="en-i">Monthly Coverage</span><span class="am-i">ወርሃዊ ሽፋን</span></div>
           <div class="service-desc"><span class="en-i">Flexible subscription-based ambulance and medical coverage plans.</span><span class="am-i">ተለዋዋጭ የደንበኝነት አምቡላንስ እና ህክምና እቅዶች።</span></div>
-          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 4px;">
-            <a href="tel:0988919191" style="font-size: 12px; font-weight: 600; color: var(--green); text-decoration: none;">📞 0988 919 191</a>
-            <a href="tel:0988929292" style="font-size: 12px; font-weight: 600; color: var(--green); text-decoration: none;">📞 0988 929 292</a>
+          <div class="service-numbers">
+            <a href="tel:0988919191" class="service-number">📞 0988 919 191</a>
+            <a href="tel:0988929292" class="service-number">📞 0988 929 292</a>
           </div>
         </div>
         <div class="service-card">
@@ -320,16 +319,16 @@
           <div class="service-icon">🤝</div>
           <div class="service-name"><span class="en-i">Event Coverage</span><span class="am-i">ዝግጅት ድጋፍ</span></div>
           <div class="service-desc"><span class="en-i">On-site ambulance standby for sports matches, concerts, and public events.</span><span class="am-i">ለስፖርት ጨዋታዎች፣ ኮንሰርቶች እና ህዝባዊ ዝግጅቶች ዝግጁ አምቡላንስ ድጋፍ።</span></div>
-          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 4px;">
-            <a href="tel:0988919191" style="font-size: 12px; font-weight: 600; color: var(--green); text-decoration: none;">📞 0988 919 191</a>
-            <a href="tel:0988929292" style="font-size: 12px; font-weight: 600; color: var(--green); text-decoration: none;">📞 0988 929 292</a>
+          <div class="service-numbers">
+            <a href="tel:0988919191" class="service-number">📞 0988 919 191</a>
+            <a href="tel:0988929292" class="service-number">📞 0988 929 292</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- MAP — SEO: All 18 city names listed for local search coverage -->
+  <!-- MAP -->
   <div>
     <div class="section">
       <h2 class="section-title">
@@ -348,120 +347,10 @@
         </div>
       </div>
 
-      <!-- INTERACTIVE GOOGLE MAP WITH PINS FOR ALL 18 CITIES -->
-      <!--
-        HOW TO ACTIVATE:
-        1. Go to console.cloud.google.com
-        2. Create a project → Enable "Maps JavaScript API"
-        3. Create an API key → copy it
-        4. Replace YOUR_GOOGLE_MAPS_API_KEY in the script src below
-        5. Upload to GitHub — the map will show all 18 pins immediately
-        The map works without an API key on localhost but requires one on a live domain.
-      -->
-      <div class="map-wrapper" style="height: 420px;">
-        <div id="nebiela-map" style="width: 100%; height: 100%;"></div>
+      <!-- Interactive Google Map — pins load via JS at bottom of page -->
+      <div class="map-wrapper">
+        <div id="nebiela-map" style="width:100%;height:100%;"></div>
       </div>
-
-      <script>
-        function initNebielaMap() {
-          var mapCenter = { lat: 9.5, lng: 39.5 };
-          var map = new google.maps.Map(document.getElementById('nebiela-map'), {
-            zoom: 6,
-            center: mapCenter,
-            mapTypeId: 'roadmap',
-            styles: [
-              { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#a2daf2' }] },
-              { featureType: 'landscape', elementType: 'geometry', stylers: [{ color: '#f5f5f0' }] },
-              { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#ffffff' }] },
-              { featureType: 'road.arterial', elementType: 'geometry', stylers: [{ color: '#eeeeee' }] }
-            ]
-          });
-
-          var stationed = [
-            { name: 'Addis Ababa', nameAm: 'አዲስ አበባ', lat: 9.0192, lng: 38.7525, stationed: true },
-            { name: 'Hawassa',     nameAm: 'ሐዋሳ',     lat: 7.0560, lng: 38.4762, stationed: true },
-            { name: 'Bishoftu',   nameAm: 'ቢሾፍቱ',   lat: 8.7516, lng: 38.9777, stationed: true }
-          ];
-
-          var destinations = [
-            { name: 'Dessie',        nameAm: 'ደሴ',          lat: 11.1333, lng: 39.6333 },
-            { name: 'Kombolcha',     nameAm: 'ኮምቦልቻ',     lat: 11.0833, lng: 39.7333 },
-            { name: 'Jijiga',        nameAm: 'ጅጅጋ',        lat: 9.3500,  lng: 42.8000 },
-            { name: 'Togo Wuchali', nameAm: 'ቶጎ ውጫሌ',    lat: 11.3,    lng: 39.6    },
-            { name: 'Bahir Dar',    nameAm: 'ባህር ዳር',      lat: 11.5936, lng: 37.3906 },
-            { name: 'Debre Berhan', nameAm: 'ደብረ ብርሃን',  lat: 9.6833,  lng: 39.5333 },
-            { name: 'Nazret',       nameAm: 'ናዝሬት',       lat: 8.5500,  lng: 39.2700 },
-            { name: 'Welayita Sodo',nameAm: 'ወላይታ ሶዶ',   lat: 6.8500,  lng: 37.7500 },
-            { name: 'Jimma',        nameAm: 'ጅማ',          lat: 7.6667,  lng: 36.8333 },
-            { name: 'Semera',       nameAm: 'ሰመራ',        lat: 11.7931, lng: 40.9994 },
-            { name: 'Moyale',       nameAm: 'ሞያሌ',        lat: 3.5500,  lng: 39.0500 },
-            { name: 'Welayita',     nameAm: 'ወላይታ',       lat: 7.0,     lng: 37.8    },
-            { name: 'Hossahena',    nameAm: 'ሆሳዕና',       lat: 7.5500,  lng: 37.8500 },
-            { name: 'Debre Markos', nameAm: 'ደብረ ማርቆስ',  lat: 10.3333, lng: 37.7333 },
-            { name: 'Ambo',         nameAm: 'አምቦ',         lat: 8.9833,  lng: 37.8500 }
-          ];
-
-          var infoWindow = new google.maps.InfoWindow();
-
-          // Stationed markers — red
-          stationed.forEach(function(city) {
-            var marker = new google.maps.Marker({
-              position: { lat: city.lat, lng: city.lng },
-              map: map,
-              title: city.name,
-              icon: {
-                path: google.maps.SymbolPath.CIRCLE,
-                scale: 10,
-                fillColor: '#C0392B',
-                fillOpacity: 1,
-                strokeColor: '#ffffff',
-                strokeWeight: 2
-              }
-            });
-            marker.addListener('click', function() {
-              infoWindow.setContent(
-                '<div style="font-family:sans-serif;padding:4px 2px;">' +
-                '<strong style="color:#C0392B;">📍 ' + city.name + '</strong><br>' +
-                '<span style="font-size:12px;color:#555;">Stationed service · ' + city.nameAm + '</span><br>' +
-                '<a href="tel:6761" style="font-size:12px;color:#1E7D34;font-weight:600;">🚨 Call 6761</a>' +
-                '</div>'
-              );
-              infoWindow.open(map, marker);
-            });
-          });
-
-          // Destination markers — green
-          destinations.forEach(function(city) {
-            var marker = new google.maps.Marker({
-              position: { lat: city.lat, lng: city.lng },
-              map: map,
-              title: city.name,
-              icon: {
-                path: google.maps.SymbolPath.CIRCLE,
-                scale: 7,
-                fillColor: '#1E7D34',
-                fillOpacity: 0.9,
-                strokeColor: '#ffffff',
-                strokeWeight: 1.5
-              }
-            });
-            marker.addListener('click', function() {
-              infoWindow.setContent(
-                '<div style="font-family:sans-serif;padding:4px 2px;">' +
-                '<strong style="color:#1E7D34;">🚑 ' + city.name + '</strong><br>' +
-                '<span style="font-size:12px;color:#555;">Service destination · ' + city.nameAm + '</span><br>' +
-                '<a href="tel:6761" style="font-size:12px;color:#1E7D34;font-weight:600;">🚨 Call 6761</a>' +
-                '</div>'
-              );
-              infoWindow.open(map, marker);
-            });
-          });
-        }
-      </script>
-      <!-- Replace YOUR_GOOGLE_MAPS_API_KEY with your real key from console.cloud.google.com -->
-      <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPa9MzP6t6vPaLPUO4ng4ydEJJ92Kr8-Q&callback=initNebielaMap">
-      </script>
 
       <div class="dest-columns" style="margin-top: 20px;">
         <div class="dest-group">
@@ -494,10 +383,9 @@
         </div>
       </div>
 
-      <div class="dest-group" style="max-width: 400px; margin-bottom: 20px;">
-        <div class="dest-group-header" style="background: var(--red-light); border-color: #e0b0b0; color: var(--red);">
-          <span class="en-i">📍 Stationed Service</span>
-          <span class="am-i">📍 የሚቆዩ አካባቢዎች</span>
+      <div class="dest-group" style="max-width:400px;margin-bottom:20px;">
+        <div class="dest-group-header" style="background:var(--red-light);border-color:#e0b0b0;color:var(--red);">
+          <span class="en-i">📍 Stationed Service</span><span class="am-i">📍 የሚቆዩ አካባቢዎች</span>
         </div>
         <ul class="dest-list">
           <li class="dest-item"><span class="dest-dot stationed"></span><span class="en-i">Addis Ababa</span><span class="am-i">አዲስ አበባ</span></li>
@@ -506,17 +394,10 @@
         </ul>
       </div>
 
-      <!-- City not listed CTA with both corporate numbers -->
       <div class="cta-box">
         <div>
-          <div class="cta-title">
-            <span class="en-i">🏙️ Don't see your city here?</span>
-            <span class="am-i">🏙️ ከተማዎን አላዩም?</span>
-          </div>
-          <div class="cta-sub">
-            <span class="en-i">Call our team to check if we serve your area.</span>
-            <span class="am-i">እናገለግልዎ እንደሆን ለማወቅ ቡድናችንን ይደውሉ።</span>
-          </div>
+          <div class="cta-title"><span class="en-i">🏙️ Don't see your city here?</span><span class="am-i">🏙️ ከተማዎን አላዩም?</span></div>
+          <div class="cta-sub"><span class="en-i">Call our team to check if we serve your area.</span><span class="am-i">እናገለግልዎ እንደሆን ለማወቅ ቡድናችንን ይደውሉ።</span></div>
         </div>
         <div class="cta-numbers">
           <a href="tel:0988919191" class="cta-btn">📞 0988 919 191</a>
@@ -524,7 +405,7 @@
         </div>
       </div>
 
-      <p class="map-note" style="margin-top: 14px;">
+      <p class="map-note" style="margin-top:14px;">
         <span class="en-i">Nebiela Ambulance serves Addis Ababa, Bishoftu, Hawassa, Jimma, Jijiga, Bahir Dar, Dessie and 11 more cities. Nearby ambulance available — call to confirm coverage in your area.</span>
         <span class="am-i">ነቤላ አምቡላንስ አዲስ አበባ፣ ቢሾፍቱ፣ ሐዋሳ፣ ጅማ፣ ጅጅጋ፣ ባህር ዳር፣ ደሴ እና ሌሎች 11 ከተሞችን ያገለግላል። ሽፋን ለማረጋገጥ ይደውሉ።</span>
       </p>
@@ -534,16 +415,9 @@
   <!-- PARTNERS -->
   <div class="section-alt">
     <div class="section">
-      <h2 class="section-title">
-        <span class="en">Our Partners</span>
-        <span class="am">አጋሮቻችን</span>
-      </h2>
+      <h2 class="section-title"><span class="en">Our Partners</span><span class="am">አጋሮቻችን</span></h2>
       <div class="divider"></div>
-
-      <div class="partners-sub-title">
-        <span class="en-i">Strategic Partners</span>
-        <span class="am-i">ስትራቴጂካዊ አጋሮች</span>
-      </div>
+      <div class="partners-sub-title"><span class="en-i">Strategic Partners</span><span class="am-i">ስትራቴጂካዊ አጋሮች</span></div>
       <div class="partners-grid">
         <div class="partner-card">
           <div class="partner-name"><span class="en-i">Ethiopian Airlines</span><span class="am-i">የኢትዮጵያ አየር መንገድ</span></div>
@@ -558,11 +432,7 @@
           <div class="partner-type"><span class="en-i">Football League</span><span class="am-i">እግር ኳስ ሊግ</span></div>
         </div>
       </div>
-
-      <div class="partners-sub-title">
-        <span class="en-i">Corporate Partners</span>
-        <span class="am-i">የድርጅት አጋሮች</span>
-      </div>
+      <div class="partners-sub-title"><span class="en-i">Corporate Partners</span><span class="am-i">የድርጅት አጋሮች</span></div>
       <div class="partners-grid">
         <div class="partner-card">
           <div class="partner-name"><span class="en-i">Alliance Infrastructure</span><span class="am-i">አሊያንስ ኢንፍራስትራክቸር</span></div>
@@ -580,101 +450,59 @@
     </div>
   </div>
 
-  <!-- ANNOUNCEMENTS — SEO: Fresh content signals active site; city/service keywords included -->
+  <!-- ANNOUNCEMENTS -->
   <div>
     <div class="section">
-      <h2 class="section-title">
-        <span class="en">Latest News</span>
-        <span class="am">የቅርብ ጊዜ ዜናዎች</span>
-      </h2>
+      <h2 class="section-title"><span class="en">Latest News</span><span class="am">የቅርብ ጊዜ ዜናዎች</span></h2>
       <div class="divider"></div>
       <div class="announce-grid">
-
         <div class="announce-card">
           <div class="announce-img">🛣️</div>
           <div class="announce-body">
             <div class="announce-date"><span class="en-i">April 2026</span><span class="am-i">ሚያዝያ 2026</span></div>
-            <div class="announce-title">
-              <span class="en-i">Inter-city Medical Transport Now Available</span>
-              <span class="am-i">የከተሞች ህክምናዊ ትራንስፖርት አሁን ይገኛል</span>
-            </div>
-            <div class="announce-text">
-              <span class="en-i">Nebiela is proud to announce medical transportation services between Addis Ababa and nearby cities. Safe, professional ambulance transfers — whenever you need them.</span>
-              <span class="am-i">ነቤላ አምቡላንስ ከአዲስ አበባ እና ከአካባቢ ከተሞች ወደ ተለያዩ ቦታዎች የህክምና ትራንስፖርት አገልግሎት መጀመሩን በኩራት ያስታውቃል። ሙያዊ እና ደህንነቱ የተጠበቀ ዝውውር — መቼ ብትፈልጉ።</span>
-            </div>
+            <div class="announce-title"><span class="en-i">Inter-city Medical Transport Now Available</span><span class="am-i">የከተሞች ህክምናዊ ትራንስፖርት አሁን ይገኛል</span></div>
+            <div class="announce-text"><span class="en-i">Nebiela is proud to announce medical transportation services between Addis Ababa and nearby cities. Safe, professional ambulance transfers — whenever you need them.</span><span class="am-i">ነቤላ አምቡላንስ ከአዲስ አበባ እና ከአካባቢ ከተሞች ወደ ተለያዩ ቦታዎች የህክምና ትራንስፖርት አገልግሎት መጀመሩን በኩራት ያስታውቃል።</span></div>
           </div>
         </div>
-
         <div class="announce-card">
           <div class="announce-img">📍</div>
           <div class="announce-body">
             <div class="announce-date"><span class="en-i">April 2026</span><span class="am-i">ሚያዝያ 2026</span></div>
-            <div class="announce-title">
-              <span class="en-i">Nebiela Now Full-Time in Bishoftu</span>
-              <span class="am-i">ነቤላ አሁን ሙሉ ጊዜ ቢሾፍቱ ውስጥ ነው</span>
-            </div>
-            <div class="announce-text">
-              <span class="en-i">Nebiela Ambulance is now stationed full-time in Bishoftu, bringing emergency ambulance services closer to your community. Call 6761 for emergencies.</span>
-              <span class="am-i">ነቤላ አምቡላንስ አሁን ሙሉ ጊዜ ቢሾፍቱ ውስጥ ተቀምጧል። ድንገተኛ አምቡላንስ አገልግሎት ለማህበረሰቡ ቅርብ ሆኗል። ለድንገተኛ ሁኔታ 6761 ይደውሉ።</span>
-            </div>
+            <div class="announce-title"><span class="en-i">Nebiela Now Full-Time in Bishoftu</span><span class="am-i">ነቤላ አሁን ሙሉ ጊዜ ቢሾፍቱ ውስጥ ነው</span></div>
+            <div class="announce-text"><span class="en-i">Nebiela Ambulance is now stationed full-time in Bishoftu, bringing emergency ambulance services closer to your community. Call 6761 for emergencies.</span><span class="am-i">ነቤላ አምቡላንስ አሁን ሙሉ ጊዜ ቢሾፍቱ ውስጥ ተቀምጧል። ለድንገተኛ ሁኔታ 6761 ይደውሉ።</span></div>
           </div>
         </div>
-
         <div class="announce-card">
           <div class="announce-img">⚽</div>
           <div class="announce-body">
             <div class="announce-date"><span class="en-i">April 2026</span><span class="am-i">ሚያዝያ 2026</span></div>
-            <div class="announce-title">
-              <span class="en-i">On-Site at Bunna vs Kidus Giorgis</span>
-              <span class="am-i">በቡና እና ቅዱስ ጊዮርጊስ ጨዋታ ላይ</span>
-            </div>
-            <div class="announce-text">
-              <span class="en-i">Nebiela Ambulance is stationed at the match between Bunna and Kidus Giorgis, ensuring rapid emergency response for players and fans alike.</span>
-              <span class="am-i">ነቤላ አምቡላንስ በቡና እና ቅዱስ ጊዮርጊስ ጨዋታ ላይ ዝግጁ ሆኖ ቆሟል — ለተጫዋቾችም ሆነ ለደጋፊዎች ፈጣን ድንገተኛ ምላሽ ይሰጣል።</span>
-            </div>
+            <div class="announce-title"><span class="en-i">On-Site at Bunna vs Kidus Giorgis</span><span class="am-i">በቡና እና ቅዱስ ጊዮርጊስ ጨዋታ ላይ</span></div>
+            <div class="announce-text"><span class="en-i">Nebiela Ambulance is stationed at the match between Bunna and Kidus Giorgis, ensuring rapid emergency response for players and fans alike.</span><span class="am-i">ነቤላ አምቡላንስ በቡና እና ቅዱስ ጊዮርጊስ ጨዋታ ላይ ዝግጁ ሆኖ ቆሟል።</span></div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 
   <!-- PARTNERSHIP FORM -->
   <!--
-  ════════════════════════════════════════════
-  FORMSPREE SETUP — 5 minutes, completely free
-  ════════════════════════════════════════════
-  1. Go to formspree.io — create a free account
-  2. Click "New Form" — name it "Nebiela Partnership Inquiry"
-  3. In Settings → Notifications, add BOTH emails as recipients:
-       woneshetu@gmail.com
-       eshetumilka@gmail.com
-  4. Formspree gives you a Form ID like: xpwzabcd
-  5. In the <form> tag below, replace YOUR_FORM_ID with that ID
-  6. Upload to GitHub — both emails receive every submission automatically
-  ✅ Emails are NEVER visible in the HTML source
-  ════════════════════════════════════════════
+  FORMSPREE SETUP:
+  1. formspree.io → free account → New Form
+  2. Settings → Notifications → add both emails:
+       woneshetu@gmail.com  /  eshetumilka@gmail.com
+  3. Copy your Form ID (e.g. xpwzabcd)
+  4. Replace YOUR_FORM_ID below → upload to GitHub
   -->
   <div class="section-alt">
     <div class="section">
-      <h2 class="section-title">
-        <span class="en">Partner With Us</span>
-        <span class="am">ከእኛ ጋር ይተባበሩ</span>
-      </h2>
+      <h2 class="section-title"><span class="en">Partner With Us</span><span class="am">ከእኛ ጋር ይተባበሩ</span></h2>
       <div class="divider"></div>
-
       <div class="form-note">
-        <span class="en-i">📞 Prefer to speak directly? Reach our corporate team:<br>
-          <strong>0988 919 191</strong> &nbsp;·&nbsp; <strong>0988 929 292</strong>
-        </span>
-        <span class="am-i">📞 ቀጥታ ለማነጋገር ይፈልጋሉ? የድርጅት ቡድናችንን ያናጋሩ:<br>
-          <strong>0988 919 191</strong> &nbsp;·&nbsp; <strong>0988 929 292</strong>
-        </span>
+        <span class="en-i">📞 Prefer to speak directly? Reach our corporate team:<br><strong>0988 919 191</strong> &nbsp;·&nbsp; <strong>0988 929 292</strong></span>
+        <span class="am-i">📞 ቀጥታ ለማነጋገር ይፈልጋሉ? የድርጅት ቡድናችንን ያናጋሩ:<br><strong>0988 919 191</strong> &nbsp;·&nbsp; <strong>0988 929 292</strong></span>
       </div>
-
       <form class="form-card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <input type="hidden" name="_subject" value="New Partnership Inquiry — Nebiela Ambulance">
-
         <div class="form-row">
           <label class="form-label"><span class="en-i">Organization name</span><span class="am-i">የድርጅት ስም</span></label>
           <input class="form-input" type="text" name="organization" placeholder="Your organization / የድርጅትዎ ስም" required>
@@ -716,34 +544,20 @@
     </div>
     <div class="footer-bar"></div>
     <div class="footer-text">
-      <span class="en-i">
-        Nebiela Ambulance · Addis Ababa, Ethiopia<br>
-        Corporate: 0988 919 191 &nbsp;·&nbsp; 0988 929 292<br><br>
-        &copy; 2026 Nebiela Ambulance. All rights reserved.
-      </span>
-      <span class="am-i">
-        ነቤላ አምቡላንስ · አዲስ አበባ፣ ኢትዮጵያ<br>
-        ድርጅት: 0988 919 191 &nbsp;·&nbsp; 0988 929 292<br><br>
-        &copy; 2026 ነቤላ አምቡላንስ። መብቱ በሕግ የተጠበቀ ነው።
-      </span>
+      <span class="en-i">Nebiela Ambulance · Addis Ababa, Ethiopia<br>Corporate: 0988 919 191 &nbsp;·&nbsp; 0988 929 292<br><br>&copy; 2026 Nebiela Ambulance. All rights reserved.</span>
+      <span class="am-i">ነቤላ አምቡላንስ · አዲስ አበባ፣ ኢትዮጵያ<br>ድርጅት: 0988 919 191 &nbsp;·&nbsp; 0988 929 292<br><br>&copy; 2026 ነቤላ አምቡላንስ። መብቱ በሕግ የተጠበቀ ነው።</span>
     </div>
   </footer>
 
-  <!-- LANGUAGE DEFAULT + TOGGLE SCRIPT -->
-  <script>
-    // Defaults to Amharic always as instructed.
-    // Uses browser language as signal — if user is on English browser, still shows Amharic.
-    // User can toggle to English using the button in the header.
-    (function() {
-      document.getElementById('site').classList.add('lang-am');
-    })();
+  <!-- ═══ SCRIPTS — all at bottom so page loads first ═══ -->
 
-    function toggleLang() {
-      document.getElementById('site').classList.toggle('lang-am');
-    }
+  <!-- Language default -->
+  <script>
+    (function() { document.getElementById('site').classList.add('lang-am'); })();
+    function toggleLang() { document.getElementById('site').classList.toggle('lang-am'); }
   </script>
 
-  <!-- HERO CROSSFADE SCRIPT -->
+  <!-- Hero crossfade -->
   <script>
     (function() {
       var captions = [
@@ -756,7 +570,6 @@
       var dotsEl = document.getElementById('hero-dots');
       var capEl = document.getElementById('hero-caption');
       var cur = 0;
-
       bgs.forEach(function(_, i) {
         var d = document.createElement('button');
         d.className = 'hero-dot' + (i === 0 ? ' active' : '');
@@ -764,7 +577,6 @@
         d.onclick = function() { goTo(i); };
         dotsEl.appendChild(d);
       });
-
       function goTo(n) {
         bgs[cur].classList.remove('active');
         dotsEl.querySelectorAll('.hero-dot')[cur].classList.remove('active');
@@ -773,13 +585,87 @@
         dotsEl.querySelectorAll('.hero-dot')[cur].classList.add('active');
         capEl.textContent = captions[cur];
       }
-
       capEl.textContent = captions[0];
       setInterval(function() { goTo(cur + 1); }, 4500);
     })();
   </script>
 
-  <!-- GOOGLE ANALYTICS — uncomment and replace ID when ready -->
+  <!-- Google Maps — initNebielaMap is the callback Google calls once Maps API loads -->
+  <script>
+    function initNebielaMap() {
+      var map = new google.maps.Map(document.getElementById('nebiela-map'), {
+        zoom: 6,
+        center: { lat: 9.5, lng: 39.0 },
+        mapTypeId: 'roadmap',
+        styles: [
+          { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#a2daf2' }] },
+          { featureType: 'landscape', elementType: 'geometry', stylers: [{ color: '#f5f5f0' }] },
+          { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#ffffff' }] },
+          { featureType: 'road.arterial', elementType: 'geometry', stylers: [{ color: '#eeeeee' }] }
+        ]
+      });
+
+      var stationed = [
+        { name: 'Addis Ababa', nameAm: 'አዲስ አበባ', lat: 9.0192,  lng: 38.7525 },
+        { name: 'Hawassa',     nameAm: 'ሐዋሳ',     lat: 7.0560,  lng: 38.4762 },
+        { name: 'Bishoftu',   nameAm: 'ቢሾፍቱ',   lat: 8.7516,  lng: 38.9777 }
+      ];
+
+      var destinations = [
+        { name: 'Dessie',         nameAm: 'ደሴ',         lat: 11.1333, lng: 39.6333 },
+        { name: 'Kombolcha',      nameAm: 'ኮምቦልቻ',    lat: 11.0833, lng: 39.7333 },
+        { name: 'Jijiga',         nameAm: 'ጅጅጋ',       lat: 9.3500,  lng: 42.8000 },
+        { name: 'Togo Wuchali',   nameAm: 'ቶጎ ውጫሌ',  lat: 11.3000, lng: 39.6000 },
+        { name: 'Bahir Dar',      nameAm: 'ባህር ዳር',    lat: 11.5936, lng: 37.3906 },
+        { name: 'Debre Berhan',   nameAm: 'ደብረ ብርሃን', lat: 9.6833,  lng: 39.5333 },
+        { name: 'Nazret',         nameAm: 'ናዝሬት',      lat: 8.5500,  lng: 39.2700 },
+        { name: 'Welayita Sodo',  nameAm: 'ወላይታ ሶዶ',  lat: 6.8500,  lng: 37.7500 },
+        { name: 'Jimma',          nameAm: 'ጅማ',         lat: 7.6667,  lng: 36.8333 },
+        { name: 'Semera',         nameAm: 'ሰመራ',       lat: 11.7931, lng: 40.9994 },
+        { name: 'Moyale',         nameAm: 'ሞያሌ',       lat: 3.5500,  lng: 39.0500 },
+        { name: 'Welayita',       nameAm: 'ወላይታ',      lat: 7.0000,  lng: 37.8000 },
+        { name: 'Hossahena',      nameAm: 'ሆሳዕና',      lat: 7.5500,  lng: 37.8500 },
+        { name: 'Debre Markos',   nameAm: 'ደብረ ማርቆስ', lat: 10.3333, lng: 37.7333 },
+        { name: 'Ambo',           nameAm: 'አምቦ',        lat: 8.9833,  lng: 37.8500 }
+      ];
+
+      var infoWindow = new google.maps.InfoWindow();
+
+      stationed.forEach(function(city) {
+        var marker = new google.maps.Marker({
+          position: { lat: city.lat, lng: city.lng },
+          map: map, title: city.name,
+          icon: { path: google.maps.SymbolPath.CIRCLE, scale: 10, fillColor: '#C0392B', fillOpacity: 1, strokeColor: '#ffffff', strokeWeight: 2 }
+        });
+        marker.addListener('click', function() {
+          infoWindow.setContent('<div style="font-family:sans-serif;padding:4px 2px;"><strong style="color:#C0392B;">📍 ' + city.name + '</strong><br><span style="font-size:12px;color:#555;">Stationed · ' + city.nameAm + '</span><br><a href="tel:6761" style="font-size:12px;color:#1E7D34;font-weight:600;">🚨 Call 6761</a></div>');
+          infoWindow.open(map, marker);
+        });
+      });
+
+      destinations.forEach(function(city) {
+        var marker = new google.maps.Marker({
+          position: { lat: city.lat, lng: city.lng },
+          map: map, title: city.name,
+          icon: { path: google.maps.SymbolPath.CIRCLE, scale: 7, fillColor: '#1E7D34', fillOpacity: 0.9, strokeColor: '#ffffff', strokeWeight: 1.5 }
+        });
+        marker.addListener('click', function() {
+          infoWindow.setContent('<div style="font-family:sans-serif;padding:4px 2px;"><strong style="color:#1E7D34;">🚑 ' + city.name + '</strong><br><span style="font-size:12px;color:#555;">Service destination · ' + city.nameAm + '</span><br><a href="tel:6761" style="font-size:12px;color:#1E7D34;font-weight:600;">🚨 Call 6761</a></div>');
+          infoWindow.open(map, marker);
+        });
+      });
+    }
+  </script>
+
+  <!--
+    PASTE YOUR API KEY BELOW — replace YOUR_GOOGLE_MAPS_API_KEY
+    Get your key from: console.cloud.google.com
+  -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPa9MzP6t6vPaLPUO4ng4ydEJJ92Kr8-Q&callback=initNebielaMap&loading=async">
+  </script>
+
+  <!-- Google Analytics — uncomment and replace ID when ready -->
   <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
